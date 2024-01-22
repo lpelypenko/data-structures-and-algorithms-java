@@ -1,5 +1,6 @@
 package leetcode.trees.BFS;
 
+import leetcode.trees.Tree;
 import leetcode.trees.TreeNode;
 
 import java.util.*;
@@ -10,7 +11,14 @@ import java.util.*;
 public class SymmetricTree101 {
 
     public static void main(String[] args) {
-
+        Tree testCase1 = new Tree();
+        TreeNode testCase1Root = testCase1.insert(new Integer[]{1, 2, 2, 3, 4, 4, 3});
+        testCase1.print(testCase1Root);
+        System.out.println("Is TC1 symmetric: " + isSymmetricDFS(testCase1Root));
+        Tree testCase2 = new Tree();
+        TreeNode testCase2Root = testCase1.insert(new Integer[]{1,2,2,null,3,null,3});
+        testCase1.print(testCase2Root);
+        System.out.println("Is TC2 symmetric: " + isSymmetricDFS(testCase2Root));
     }
 
     /*
@@ -18,14 +26,14 @@ public class SymmetricTree101 {
      Space complexity is O(h) where h is tree high
      Time complexity is O(n) because we will visit every element in the tree
      */
-     public boolean isSymmetricDFS(TreeNode root) {
+     public static boolean isSymmetricDFS(TreeNode root) {
          if (root == null) {
              return true;
          }
          return isSame(root.left, root.right);
      }
 
-     private boolean isSame(TreeNode node1, TreeNode node2) {
+     private static boolean isSame(TreeNode node1, TreeNode node2) {
          if (node1 == null && node2 == null) {
              return true;
          }
