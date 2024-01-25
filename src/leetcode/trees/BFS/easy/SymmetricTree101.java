@@ -1,4 +1,4 @@
-package leetcode.trees.BFS;
+package leetcode.trees.BFS.easy;
 
 import leetcode.trees.Tree;
 import leetcode.trees.TreeNode;
@@ -6,6 +6,7 @@ import leetcode.trees.TreeNode;
 import java.util.*;
 
 /**
+ * Leetcode Easy.
  * <a href="https://leetcode.com/problems/symmetric-tree/">101. Symmetric Tree</a>
  */
 public class SymmetricTree101 {
@@ -24,6 +25,8 @@ public class SymmetricTree101 {
     /*
      |--------- DFS approach ---------|
      Space complexity is O(h) where h is tree high
+     Best case tree is balanced and space is h=logn
+
      Time complexity is O(n) because we will visit every element in the tree
      */
      public static boolean isSymmetricDFS(TreeNode root) {
@@ -44,6 +47,8 @@ public class SymmetricTree101 {
      }
 
     // |-------- BFS simplified approach ---------|
+    // Space complexity is O(n)
+    // Time complexity is O(n)
     public boolean isSymmetricBFSSimplified(TreeNode root) {
         if (root == null) {
             return true;
@@ -86,9 +91,9 @@ public class SymmetricTree101 {
             List<Integer> valuesOnLevel = new ArrayList<>(); // Space complexity is O(n/2) if we get to the last level
             int levelSize = toProcess.size();
             for(int i=0; i < levelSize; i++) {
-                TreeNode currentNode = toProcess.poll();
+                TreeNode currentNode = toProcess.poll(); // O(1)
                 if(currentNode!=null) {
-                    valuesOnLevel.add(currentNode.val);
+                    valuesOnLevel.add(currentNode.val); // O(1)
                     toProcess.add(currentNode.left);
                     toProcess.add(currentNode.right);
                 } else {

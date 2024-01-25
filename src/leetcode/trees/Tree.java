@@ -15,16 +15,28 @@ public class Tree {
      */
     public TreeNode insert(Integer[] input) {
         Queue<TreeNode> toProcess = new LinkedList<>();
-        root = new TreeNode(input[0]);
+        if (input[0] == null) {
+            root = null;
+        } else {
+            root = new TreeNode(input[0]);
+        }
         toProcess.add(root);
         int leftChildIndex = 1;
         int rightChildIndex = 2;
         while (!toProcess.isEmpty() && rightChildIndex < input.length) {
             TreeNode current = toProcess.poll();
-            current.left = new TreeNode(input[leftChildIndex]);
+            if (input[leftChildIndex] == null) {
+                current.left = null;
+            } else {
+                current.left = new TreeNode(input[leftChildIndex]);
+            }
             toProcess.add(current.left);
             leftChildIndex = leftChildIndex+2;
-            current.right = new TreeNode(input[rightChildIndex]);
+            if (input[rightChildIndex] == null) {
+                current.right = null;
+            } else {
+                current.right = new TreeNode(input[rightChildIndex]);
+            }
             toProcess.add(current.right);
             rightChildIndex = rightChildIndex +2;
         }
