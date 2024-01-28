@@ -44,12 +44,15 @@ public class SameTree100 {
             if (left == null || right == null) {
                 return false;
             }
-            if (left.val != right.val) return false;
+            if (left.val != right.val) {
+                return false;
+            }
             toProcess.add(left.left);
             toProcess.add(right.left);
             toProcess.add(left.right);
             toProcess.add(right.right);
         }
+
         return true;
     }
 
