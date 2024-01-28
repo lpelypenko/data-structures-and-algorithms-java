@@ -43,7 +43,7 @@ public class Tree {
         return root;
     }
 
-    public void print(TreeNode root) {
+    public void print() {
         Queue<TreeNode> toProcess = new LinkedList<>();
         if (root == null) System.out.println("null");
         toProcess.add(root);

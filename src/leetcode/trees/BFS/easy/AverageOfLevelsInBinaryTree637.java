@@ -51,11 +51,11 @@ public class AverageOfLevelsInBinaryTree637 {
     public static void main(String[] args) {
         Tree testCase1 = new Tree();
         TreeNode testCase1Root = testCase1.insert(new Integer[]{1, 2, 2, 3, 4, 4, 3});
-        testCase1.print(testCase1Root);
+        testCase1.print();
         System.out.println("Average on levels: " + averageOfLevels(testCase1Root));
         Tree testCase2 = new Tree();
         TreeNode testCase2Root = testCase2.insert(new Integer[]{1, 2, 2, null, 3, null, 3});
-        testCase2.print(testCase2Root);
+        testCase2.print();
         System.out.println("Average on levels: " + averageOfLevels(testCase2Root));
         Tree testCase3 = new Tree();
         TreeNode testCase3Root = testCase3.insert(new Integer[]{2147483647,2147483647,2147483647});

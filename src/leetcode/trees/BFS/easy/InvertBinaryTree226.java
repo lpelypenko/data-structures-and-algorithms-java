@@ -13,21 +13,22 @@ public class InvertBinaryTree226 {
     public static void main(String[] args) {
         // TC1
         Tree testCase1 = new Tree();
-        TreeNode testCase1Root = testCase1.insert(new Integer[]{4,2,7,1,3,6,9});
+        TreeNode testCase1Root = testCase1.insert(new Integer[]{4, 2, 7, 1, 3, 6, 9});
         System.out.println("Original:");
-        testCase1.print(testCase1Root);
+        testCase1.print();
         invertTree(testCase1Root);
         System.out.println("Inverted:");
-        testCase1.print(testCase1Root);
+        testCase1.print();
         // TC2
         Tree testCase2 = new Tree();
-        TreeNode testCase2Root = testCase2.insert(new Integer[]{2,1,3});
+        TreeNode testCase2Root = testCase2.insert(new Integer[]{2, 1, 3});
         System.out.println("Original:");
-        testCase2.print(testCase2Root);
+        testCase2.print();
         invertTree(testCase2Root);
         System.out.println("Inverted:");
-        testCase2.print(testCase2Root);
+        testCase2.print();
     }
+
     public static TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
         Queue<TreeNode> toProcess = new LinkedList<>();

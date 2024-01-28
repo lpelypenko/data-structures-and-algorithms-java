@@ -14,11 +14,11 @@ public class SymmetricTree101 {
     public static void main(String[] args) {
         Tree testCase1 = new Tree();
         TreeNode testCase1Root = testCase1.insert(new Integer[]{1, 2, 2, 3, 4, 4, 3});
-        testCase1.print(testCase1Root);
+        testCase1.print();
         System.out.println("Is TC1 symmetric: " + isSymmetricDFS(testCase1Root));
         Tree testCase2 = new Tree();
         TreeNode testCase2Root = testCase2.insert(new Integer[]{1,2,2,null,3,null,3});
-        testCase2.print(testCase2Root);
+        testCase2.print();
         System.out.println("Is TC2 symmetric: " + isSymmetricDFS(testCase2Root));
     }
 
