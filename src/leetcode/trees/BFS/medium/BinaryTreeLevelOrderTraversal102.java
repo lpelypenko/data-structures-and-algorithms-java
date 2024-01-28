@@ -1,4 +1,4 @@
-package leetcode.trees.BFS;
+package leetcode.trees.BFS.medium;
 import leetcode.trees.TreeNode;
 
 import java.util.ArrayList;
@@ -8,6 +8,10 @@ import java.util.Queue;
 
 public class BinaryTreeLevelOrderTraversal102 {
 
+    /**
+     * <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">102. Binary Tree Level Order Traversal</a>
+     * @param args
+     */
     public static void main(String[] args) {
 
     }

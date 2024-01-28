@@ -1,12 +1,10 @@
-package leetcode.trees.stack.medium;
+package leetcode.stack.medium;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
- * 227. Basic Calculator II
- * https://leetcode.com/problems/basic-calculator-ii/
- *
+ * <a href="https://leetcode.com/problems/basic-calculator-ii/">227. Basic Calculator II</a>
  * Given a string s which represents an expression, evaluate this expression and return its value.
  * The integer division should truncate toward zero. You may assume that the given expression is
  * always valid. All intermediate results will be in the range of [-231, 231 - 1].
