@@ -1,19 +1,25 @@
 package leetcode.trees;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 public class Tree {
     public TreeNode root;
 
+    public Tree() {
+        this.root = null;
+    }
+
+    public Tree(Integer[] input) {
+        this.root = insert(input);
+    }
+
     /**
-     *
      * @param input e.g. [1,2,2,3,4,4,3]
      * @return Returns root
      */
     public TreeNode insert(Integer[] input) {
+        if (input.length == 0) return null;
         Queue<TreeNode> toProcess = new LinkedList<>();
         if (input[0] == null) {
             root = null;
@@ -23,22 +29,26 @@ public class Tree {
         toProcess.add(root);
         int leftChildIndex = 1;
         int rightChildIndex = 2;
-        while (!toProcess.isEmpty() && rightChildIndex < input.length) {
+        while (!toProcess.isEmpty()) {
             TreeNode current = toProcess.poll();
-            if (input[leftChildIndex] == null) {
-                current.left = null;
-            } else {
-                current.left = new TreeNode(input[leftChildIndex]);
+            if (leftChildIndex <  input.length) {
+                if (input[leftChildIndex] == null) {
+                    current.left = null;
+                } else {
+                    current.left = new TreeNode(input[leftChildIndex]);
+                    toProcess.add(current.left);
+                }
+                leftChildIndex += 2;
             }
-            toProcess.add(current.left);
-            leftChildIndex = leftChildIndex+2;
-            if (input[rightChildIndex] == null) {
-                current.right = null;
-            } else {
-                current.right = new TreeNode(input[rightChildIndex]);
+            if (rightChildIndex < input.length) {
+                if (input[rightChildIndex] == null) {
+                    current.right = null;
+                } else {
+                    current.right = new TreeNode(input[rightChildIndex]);
+                    toProcess.add(current.right);
+                }
+                rightChildIndex += 2;
             }
-            toProcess.add(current.right);
-            rightChildIndex = rightChildIndex +2;
         }
         return root;
     }
