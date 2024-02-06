@@ -31,7 +31,7 @@ public class MergeSort {
     public static int[] mergeSort(int[] array) {
         // base case: array with 1 element is by definition sorted
         if (array.length == 1) return array;
-        int midIndex = array.length / 2;
+        int midIndex = array.length / 2; // Note: non-integer is dropped
         int[] left = mergeSort(Arrays.copyOfRange(array, 0, midIndex));
         int[] right = mergeSort(Arrays.copyOfRange(array, midIndex, array.length));
 
